@@ -8,4 +8,20 @@ def get_user_names(data:list, country:str) -> list:
     Returns:
         list: A list of users with the given country
     """
-    return 
+    
+    max_age_name=[]
+    for user in data:
+        if user['country']==country:
+            country=user['country']
+            max_age_name.append(user['name'])
+    return max_age_name
+print(get_user_names(data=[
+  {
+    'name': 'John', 
+    'country': 'USA'
+  }, 
+  {
+    'name': 'Mary', 
+    'country': 'UK'
+  }
+], country="UK"))
